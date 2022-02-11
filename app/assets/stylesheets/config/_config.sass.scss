@@ -1,4 +1,11 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Work Sans", "Helvetica", "sans-serif";
+$headers-font: "Nunito", "Helvetica", "sans-serif";
 // Variables
+
 $toggle-switch: #e9ecef;
 $toggle-switch-dark: #19328a;
 
@@ -16,11 +23,6 @@ $card-background: #faedcd;
 
 $footer-dark: #001a2c;
 
-// General style
-$font-family-sans-serif:  "Work Sans", "Helvetica", "sans-serif";
-$headings-font-family:    "Nunito", "Helvetica", "sans-serif";
-$body-bg:                 #F4F4F4;
-$font-size-base: 1rem;
 
 // Colors
 $body-color: #0E0000;
@@ -34,15 +36,6 @@ $warning:    #E67E22;
 $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
-
-
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
-
 
 // Colours:
 $red: #FD1015;
