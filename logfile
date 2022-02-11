@@ -12,3 +12,4 @@
 2022-02-11 17:36:46.830 CET [4721] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-02-11 17:36:46.832 CET [4722] LOG:  database system was shut down at 2022-02-11 17:35:53 CET
 2022-02-11 17:36:46.834 CET [4721] LOG:  database system is ready to accept connections
+2022-02-11 17:39:16.654 CET [4908] FATAL:  database "goormey_4_development" does not exist
