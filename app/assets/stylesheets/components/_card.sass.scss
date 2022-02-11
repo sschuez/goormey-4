@@ -1,0 +1,163 @@
+@use "../config/config.sass.scss" as *;
+
+.main-card {
+  padding: 48px; 
+  width: 100%;
+  border-radius: 25px;
+  background: $brown-light;
+  line-height: 1.5em;
+  letter-spacing: 0.3px;
+  margin: 12px 0 0 0;
+  box-shadow: 2px 1px 1px $background-complimentary-dark;
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+}
+
+.main-card .ingredient-show {
+  display: flex;
+  border: black 1px solid;
+  border-radius: 25px;
+  margin: 6px 0 6px 0;
+  padding: 6px 12px 6px 12px;
+  background-color: $brown-dark;
+}
+
+.ingredient-show p {
+  margin: 0px;
+  color: $brown-light;
+}
+
+.ingredient-show .instruction-description {
+  margin: 0px 0px 0px 24px;
+}
+
+.user-show {
+  display: flex;
+}
+
+.user-show .user-name {
+  margin: 8px 0 0 24px;
+}
+
+.ingredient-card {
+  padding: 6px;
+  background: #f8f9fa;
+  margin-bottom: 12px;
+}
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  align-items: center // This one changes cards to their size even if grid is larger
+}
+
+.card-recipe {
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: $brown-light;
+  box-shadow: 2px 1px 1px $background-complimentary-dark;
+  position: relative;
+}
+
+.card-recipe:hover {
+  box-shadow: 3px 1.5px 1.5px $background-complimentary-dark;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-recipe > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-recipe h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-recipe p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-recipe .card-recipe-infos {
+  padding: 16px 36px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-recipe-infos .card-recipe-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+// RESPONSIVE DESIGN STUFF
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .main-card {
+    padding: 12px;
+    
+    .description-show {
+      padding: 12px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .main-card {
+    padding: 12px;
+    
+    .description-show {
+      padding: 12px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .main-card {
+    padding: 12px 36px 12px 36px;
+    
+    .description-show {
+      padding: 12px 36px 12px 36px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .main-card {
+    padding: 12px 48px 12px 48px;
+
+    .description-show {
+      padding: 12px 48px 12px 48px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .main-card {
+    padding: 12px 90px 12px 90px;
+    
+    .description-show {
+      padding: 12px 90px 12px 90px;
+    }
+  }
+}

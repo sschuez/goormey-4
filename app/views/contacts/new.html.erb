@@ -16,7 +16,8 @@
       <br>
       <%= f.input :message,
                   as: :text,
-                  required: true %>
+                  required: true,
+                  input_html: { data: { controller: "textarea-autogrow" } } %>
       <br>
 
       <div class="action-btns">

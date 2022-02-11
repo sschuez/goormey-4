@@ -1,0 +1,77 @@
+@use "../config/config.sass.scss" as *;
+
+.pc-tab > input,
+.pc-tab section > div {
+  display: none;
+}
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3 {
+  display: block;
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3 {
+}
+
+/* Visual Styles */
+
+$activeColor: $brown-light;
+$unactiveColor: #eeeeee;
+$unactiveHoverColor: #dddddd;
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pc-tab { 
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      label {
+        float: left;
+        padding: 15px 25px;
+        border-radius: 25px;
+        font-weight: normal;
+        &:hover {
+          background: $brown-light;
+          font-weight: bold;
+        }
+        &:active {
+          background: $activeColor;
+        }
+      }
+      &:not(:last-child) label {
+         border-right-width: 0; 
+      }
+    }
+  }
+  section {
+    clear: both;
+  }
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3 {
+  label {
+    background: $brown-light;
+    position: relative;
+    font-weight: bold;
+  }
+}
+
+.title-profile {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}

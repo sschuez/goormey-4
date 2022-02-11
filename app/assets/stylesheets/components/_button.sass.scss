@@ -1,25 +1,143 @@
 @use "../config/config.sass.scss" as *;
 
 .btn-ghost {
-  color: $links;
-  border: 1px solid $links;
-  padding: 8px 24px;
-  border-radius: 50px;
-  transition: opacity 0.3s ease;
-}
-
-.dark-mode .btn-ghost {
-  color: $links-dark;
-  border: 1px solid $links-dark;
+  color: $red-middle !important;
+  border: 2px solid $red-middle !important;
+  padding: 8px 24px !important;
+  border-radius: 50px !important;
+  font-weight: lighter !important;
+  transition: opacity 0.3s ease !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  margin: 1.5px !important;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
-  font-weight: bold;
-  border: 2px solid $links;
+  color: $red-middle !important;
+  background-color: $red-very-light !important;
 }
 
-.dark-mode .btn-ghost:hover {
-  border: 2px solid $links-dark;
+.btn-coral {
+  border-color: $bright-coral !important;
+  color: $bright-coral !important;
 }
 
+.btn-coral:hover {
+  color: $bright-coral !important;
+  border-color: $bright-coral !important;
+}
+
+.btn-yellow {
+  border-color: $orange !important;
+  color: $orange !important;
+}
+
+.btn-yellow:hover {
+  color: $orange !important;
+  border-color: $orange !important;
+}
+
+.btn-green {
+  border-color: $dark-green !important;
+  color: $dark-green !important;
+}
+
+.btn-green:hover {
+  border-color: $dark-green !important;
+  color: $dark-green !important;
+}
+
+.action-btns {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.recipes-btn {
+  margin-right: auto !important;
+}
+
+.show-icon {
+  margin: 0 12px 0 12px !important;
+  padding-top: 12px !important;
+}
+
+.fa-edit {
+  color: $orange !important;
+  font-size: 24px !important;
+  font-weight: lighter !important;
+}
+
+.fa-edit:hover {
+  font-weight: bold !important;
+}
+
+.fa-trash-alt {
+  color: $bright-coral !important;
+  font-size: 24px !important;
+  font-weight: lighter !important;
+}
+
+.fa-trash-alt:hover {
+  font-weight: bold !important;
+}
+
+.inline-delete {
+  position: absolute !important;
+  top: 24px !important;
+  right: 30px !important;
+}
+
+.top-icon {
+  position: absolute !important;
+  top: 24px !important;
+  right: 30px !important;
+}
+
+
+.bottom-icon {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 30px !important;
+}
+
+.save-recipe {
+  text-align: right !important;
+}
+
+.add-association {
+  margin-top: 18px !important;
+  margin-bottom: 18px !important;
+  text-align: center !important;
+}
+
+.contact-btn {
+  position: absolute !important;
+  bottom: 24px !important;
+  right: 24px !important;
+}
+
+.card-recipe-like {
+  position: absolute !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  cursor: pointer !important;
+  color: #D23333 !important;
+  font-size: 22px !important;
+  background-color: none !important;
+}
+
+.card-recipe-like:hover {
+  font-size: 26px !important;
+}
+
+// Smallest device
+@media (max-width: 600px) {
+  // .add-association {
+  //   text-align: center !important;
+  // }
+  .inline-delete {
+    right: 18px !important;
+    top: 12px !important;
+  }
+  
+}

@@ -1,0 +1,101 @@
+@use "../config/config.sass.scss" as *;
+
+.inline-form {
+  display: flex !important;
+  flex-flow: row wrap !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  position: relative !important;
+}
+
+.handle {
+  position: absolute;
+  bottom: 12px;
+  right: 24px;
+  .fa-grip-lines {
+    color: $bright-coral;
+    font-size: 36px;
+  }
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.handle:hover {
+  color: $red-very-light;
+}
+
+.label-inline {
+  justify-content: flex-start !important;
+
+  p {
+    font-weight: bold;
+  }
+}
+
+#recipe_serves {
+  width: 90px;
+  margin-left: 24px;
+}
+
+.form-control {
+  background-color: $brown-light !important;
+  border: none !important;
+  border-bottom: 2px solid $red-middle !important;
+  color: $red-middle !important;
+  border-radius: 0px !important;
+}
+
+.inline-form label {
+  color: $bright-coral;
+}
+
+.form-actions {
+  margin-top: 36px !important;
+}
+
+.edit-form {
+  border-bottom: $red-middle 3px solid;
+  // margin: 36px;
+  padding: 24px 0 36px 0;
+}
+
+#edit-instructions {
+  border: none;
+  padding-bottom: 0;
+}
+
+.counter {
+  background-color: $bright-coral;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+/* responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+
+// Smallest device
+@media (max-width: 600px) {
+  .handle {
+    right: 12px;
+    bottom: -5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .form-input {
+    margin: 10px 0 !important;
+  }
+
+  .form-inline {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+}

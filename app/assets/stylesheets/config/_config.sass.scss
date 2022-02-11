@@ -16,6 +16,55 @@ $card-background: #faedcd;
 
 $footer-dark: #001a2c;
 
-// Fonts
-@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap';
-$font-family: 'Roboto', sans-serif;
+// General style
+$font-family-sans-serif:  "Work Sans", "Helvetica", "sans-serif";
+$headings-font-family:    "Nunito", "Helvetica", "sans-serif";
+$body-bg:                 #F4F4F4;
+$font-size-base: 1rem;
+
+// Colors
+$body-color: #0E0000;
+$primary:    #167FFB;
+$success:    #1EDD88;
+$info:       #FFC65A;
+$danger:     #FD1015;
+$warning:    #E67E22;
+
+// Buttons & inputs' radius
+$border-radius:    2px;
+$border-radius-lg: 2px;
+$border-radius-sm: 2px;
+
+
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Work Sans", "Helvetica", "sans-serif";
+$headers-font: "Nunito", "Helvetica", "sans-serif";
+
+
+// Colours:
+$red: #FD1015;
+$blue: #167FFB;
+$yellow: #FFC65A;
+$orange: #E67E22;
+$green: #1EDD88;
+$gray: #0E0000;
+$light-gray: #F4F4F4;
+
+$background: #FCF4EE;
+$background-complimentary-light: #FAD7C6;
+$background-complimentary-dark: #F3E8E2;
+$misty-rose: #FFECEB;
+
+$brown-dark: #391B05;
+$brown-middle: #A84D10;
+$brown-light: #F9C9B3;
+
+$red-middle: #660700;
+$red-very-light: #FFECEB;
+
+$bright-coral: #FF4B3E;
+$bright-yellow: yellow;
+$dark-green: #4d908e;

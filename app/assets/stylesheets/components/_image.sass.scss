@@ -1,0 +1,28 @@
+@use "../config/config.sass.scss" as *;
+
+.image-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#photo-preview {
+  border-radius: 25px;
+}
+
+.photo-show img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.recipe {
+  padding: 0;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .image-upload {
+    flex-direction: column;
+  }
+}

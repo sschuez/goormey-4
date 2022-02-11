@@ -2,30 +2,30 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-}
-
-.dark-mode .navbar-lewagon {
-  background-color: $background-color-dark;
+  background: $background-complimentary-light;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.dark-mode .navbar-collapse {
-  background: $background-color-dark;
-}
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
-.dark-mode .dropdown-menu {
-  background-color: $background-color-dark !important;
-  border: 1px solid rgba($font-color-dark, 0.15)
+.dropdown-menu {
+  border-radius: 25px !important;
+  background-color: $background-complimentary-light !important;
+  border: solid 1px $red-middle !important;
+  box-shadow: 2px 1px 1px $background-complimentary-dark !important;
 }
 
-.dark-mode .dropdown-item:hover {
-  background-color: $toggle-switch-dark;
+.dropdown-menu a {
+  color: $red-middle !important;
+}
+
+.dropdown-item:hover {
+  background-color: $background !important;
+  border-radius: 25px !important;
+  color: $red-middle !important;
 }
