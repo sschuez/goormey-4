@@ -13,3 +13,7 @@
 2022-02-11 17:36:46.832 CET [4722] LOG:  database system was shut down at 2022-02-11 17:35:53 CET
 2022-02-11 17:36:46.834 CET [4721] LOG:  database system is ready to accept connections
 2022-02-11 17:39:16.654 CET [4908] FATAL:  database "goormey_4_development" does not exist
+2022-02-11 17:55:31.670 CET [7260] ERROR:  database "goormey_4_development" already exists
+2022-02-11 17:55:31.670 CET [7260] STATEMENT:  CREATE DATABASE "goormey_4_development" ENCODING = 'unicode'
+2022-02-11 17:55:31.674 CET [7261] ERROR:  database "goormey_4_test" already exists
+2022-02-11 17:55:31.674 CET [7261] STATEMENT:  CREATE DATABASE "goormey_4_test" ENCODING = 'unicode'
