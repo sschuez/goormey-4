@@ -1,0 +1,5 @@
+meta_product_name: "Goormey"
+meta_title: "Goormey - The joy of homecooking"
+meta_description: "Goormey is all about sharing in the joy of home cooking. Whether you're posting your favourite scrambled egg or a sophisticated cheese cake, everyone is interested in hearing about your special dish."
+meta_image: "metaimg.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

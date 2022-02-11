@@ -1,0 +1,15 @@
+<div data-refresh-list-target="list">
+  
+  <% if params[:query].blank? %>
+    <p><%= pluralize recipes.count, 'recipe' %> available</p>
+  <% else %>
+    <p><%= pluralize recipes.count, 'result' %> for <code><%= params[:query] %></code></p>
+  <% end %>
+  
+  <div class="index-grid">
+    <% recipes.each do |recipe| %>
+      <%= render "recipes/recipe_cards.html", recipe: recipe %>
+    <% end %>
+  </div>
+
+</div>

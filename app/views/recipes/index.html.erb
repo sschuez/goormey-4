@@ -1,0 +1,35 @@
+<%= link_to '+ New recipe', new_recipe_path, class: "btn btn-ghost btn-coral" %>
+<br><br>
+
+<%# Search bar %>
+<%= simple_form_for :search, url: recipes_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control string required",
+      type: "text",
+      id: "search_query" 
+      %>
+    <button name="button" type="submit" class="btn btn-ghost">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
+
+<%# Result counter %>
+<% if params[:query].blank? %>
+  <p><%= pluralize Recipe.all.count, 'recipe' %> available</p>
+<% else %>
+  <p><%= pluralize @recipes.count, 'result' %> for <code><%= params[:query] %></code></p>
+<% end %>
+
+<%# Recipes %>
+<div class="index-grid">
+  <% @recipes.each do |recipe| %>
+    <%= render "recipes/recipe_cards", recipe: recipe %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to_prev_page @recipes, 'Previous Page', class: 'btn-ghost' %>
+<%= link_to_next_page @recipes, 'Next Page', class: 'btn-ghost' %>

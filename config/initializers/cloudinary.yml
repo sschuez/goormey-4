@@ -1,0 +1,25 @@
+---
+development:
+  cloud_name: ddrigs7lf
+  api_key: '214367468714256'
+  api_secret: Sxj2AEyjtP2FY6uzsgwA8fXx47o
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ddrigs7lf
+  api_key: '214367468714256'
+  api_secret: Sxj2AEyjtP2FY6uzsgwA8fXx47o
+  enhance_image_tag: true
+  static_file_support: true
+staging:
+  cloud_name: ddrigs7lf
+  api_key: '214367468714256'
+  api_secret: Sxj2AEyjtP2FY6uzsgwA8fXx47o
+  enhance_image_tag: true
+  static_file_support: true  
+test:
+  cloud_name: ddrigs7lf
+  api_key: '214367468714256'
+  api_secret: Sxj2AEyjtP2FY6uzsgwA8fXx47o
+  enhance_image_tag: true
+  static_file_support: false

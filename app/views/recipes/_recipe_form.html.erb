@@ -1,0 +1,27 @@
+<h4>Recipe description</h4>
+<br>
+<div class="form-inputs">
+  <%= f.input :name,
+              required: true %>
+  <%= f.input :description,
+              required: true,
+              input_html: { data: { controller: "textarea-autogrow" } } %>
+  <div class="inline-form label-inline">
+    <div>
+      <p>Serves how many? *</p>
+    </div>
+    <%= f.input :serves, 
+                label: false,
+                required: true, 
+                as: :integer %>
+  </div>
+  <br>
+  <div class="image-upload" data-controller="photo-preview">
+    <%= f.input :photo, 
+                input_html: { class: 'd-none', data: { action: "click->photo-preview#photo_input", photo_preview_target: "photoInput" } }, 
+                label_html: { class: 'btn-ghost' }, 
+                label: '📷 Upload a photo',
+                hint: "You can also do this later" %>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview", data: { photo_preview_target: "photoPreview" } %>
+  </div>
+</div>

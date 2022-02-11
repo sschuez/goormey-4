@@ -1,0 +1,20 @@
+<%= content_tag :div, class: "nested-fields", data: { new_record: form.object.new_record?, id: form.object.id } do %>
+  <%= form.hidden_field :id %>
+  <div data-nested-form-target="inputElement" class="form-inputs inline-form ingredient-show">
+    <div class="handle">
+      <i class="fas fa-grip-lines"></i>
+    </div>
+
+    <%= form.input  :description, 
+                    label: "Description", 
+                    class: "form-input",
+                    as: :text, 
+                    placeholder: "e.g. 250g of flour",
+                    input_html: { data: { controller: "textarea-autogrow" } } 
+                    %>
+    <%= link_to "#", data: { action: "click->nested-form#remove_association" } do %>
+      <i class="inline-delete fas fa-trash-alt"></i>
+    <% end %>
+  </div>
+  <%= form.hidden_field :_destroy %>
+<% end %>

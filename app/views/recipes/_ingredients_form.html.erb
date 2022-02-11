@@ -1,0 +1,18 @@
+<h4>Ingredients</h4>
+<br>
+<div data-controller="nested-form drag" data-drag-url="/recipes/<%= @recipe.id %>/ingredients/:id/ingredient_position">
+  <template data-nested-form-target="template">
+    <%= f.fields_for :ingredients, Ingredient.new, child_index: 'NEW_RECORD' do |ingredient| %>
+      <%= render "recipes/ingredient_fields", form: ingredient %>
+    <% end %>
+  </template>   
+
+  <%= f.fields_for :ingredients, @recipe.ingredients.order(position: :asc), include_id: false do |ingredient|%>
+    <%= render "recipes/ingredient_fields", form: ingredient %>
+  <% end %>
+  
+  <div class="add-association" data-nested-form-target="links">
+    <%= link_to "+ Add ingredient", "#", class: "btn-ghost", data: { action: "click->nested-form#add_association" } %>
+  </div>
+</div>
+

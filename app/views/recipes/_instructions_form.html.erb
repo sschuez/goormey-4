@@ -1,0 +1,17 @@
+<h4>Instructions</h4>
+<br>
+<div data-controller="nested-form drag" data-drag-url="/recipes/<%= @recipe.id %>/instructions/:id/instruction_position"> 
+  <template data-nested-form-target="template">
+    <%= f.fields_for :instructions, Instruction.new, child_index: 'NEW_RECORD' do |instruction| %>
+      <%= render "/recipes/instruction_fields", form: instruction %>
+    <% end %>
+  </template>   
+
+  <%= f.fields_for :instructions, @recipe.instructions.order(position: :asc), include_id: false do |instruction|%>
+    <%= render "/recipes/instruction_fields", form: instruction %>
+  <% end %>
+
+  <div class="add-association" data-nested-form-target="links">
+    <%= link_to "+ Add instruction", "#", class: "btn-ghost", data: { action: "click->nested-form#add_association" } %>
+  </div>
+</div>

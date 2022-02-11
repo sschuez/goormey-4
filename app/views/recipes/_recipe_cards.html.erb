@@ -1,0 +1,37 @@
+<div class="card-recipe">
+  
+  <%= link_to recipe_path(recipe) do %>
+    <% if recipe.photo.attached? %>
+      <%= cl_image_tag recipe.photo.key, :transformation=>[
+      {:width=>800, :height=>800}], 
+      class: "card-image" %>
+    <% else %>
+      <%= image_tag "sample_meal.jpg", class: "card-image" %>
+    <% end %>
+  <% end %>
+
+  <div class="card-recipe-infos">
+    <%= link_to recipe_path(recipe) do %>
+      <div>
+        <h2><%= highlight(recipe.name, query_array) %></h2>
+        <p><%= highlight(recipe.description, query_array) %></p>
+      </div>
+    <% end %>
+
+    <%= link_to user_path(recipe.user) do %>
+      <% if recipe.user.avatar.attached? %> 
+        <%= cl_image_tag recipe.user.avatar.key, :transformation=>[
+          {:width=>200, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"thumb"}], 
+          class: "card-recipe-user avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>
+        <%= image_tag "default_avatar_square.png", class: "card-recipe-user avatar", alt: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <div data-controller="like" class="card-recipe-like" data-like-url="/recipes/<%= recipe.id %>/likes">
+    <i data-action="click->like#save" data-like-target="heart" class="<%= liked?(recipe) %> fa-heart"></i>
+  </div>
+
+</div>

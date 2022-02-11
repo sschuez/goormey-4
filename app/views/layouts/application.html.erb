@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Goormey4</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+    <!-- Facebook Open Graph data -->
+    <%= render 'shared/facebook_open_graph_data' %>
+    <!-- Twitter Card data -->
+    <%= render 'shared/twitter_card_data' %>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="https://kit.fontawesome.com/649ff54fcc.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/649ff54fcc.js" crossorigin="anonymous"></script>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,14 +19,16 @@
   </head>
 
   <body class="<%= cookies[:theme] %>">  
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
+    <%#= render 'shared/analytics' %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
 
     
-<div class="background-main">
-  <%= yield %>
-</div>    
-<%= render 'shared/footer' %>
+    <div class="background-main">
+      <%= yield %>
+    </div>    
+    
+    <%= render 'shared/footer' %>
 
   </body>
 </html>

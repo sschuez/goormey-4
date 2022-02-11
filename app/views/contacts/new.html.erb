@@ -1,0 +1,27 @@
+<div class="main-card">
+  <%= simple_form_for(@contact) do |f| %>
+    
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <h4>Get in touch</h4>
+    <br>
+    <div class="form-inputs">
+      <%= f.label :email, required: true %>
+      <% if current_user == nil %>
+        <%= f.email_field :email, class: 'form-control' %>
+      <% else %>
+        <%= f.email_field :email, value: current_user.email, class: 'form-control' %>
+      <% end %>           
+      <br>
+      <%= f.input :message,
+                  as: :text,
+                  required: true %>
+      <br>
+
+      <div class="action-btns">
+        <%= f.button :submit, "✓ Send message", class: "btn-ghost btn-green" %>
+      </div>  
+    </div>
+  <% end %>
+</div>

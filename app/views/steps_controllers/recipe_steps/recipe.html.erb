@@ -1,0 +1,14 @@
+<%# METADATA %>
+<% content_for :meta_title, "Your recipe on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Write your main description here for your recipe and add a nice photo." %>
+<%# /METADATA %>
+
+<%= render :layout => 'form' do |f| %>
+  
+  <%= render "recipes/recipe_form", f: f %>
+  
+  <div class="form-actions save-recipe">
+    <%= f.submit "Ingredients", class: "btn btn-ghost btn-green" %>
+  </div>
+  
+<% end %>

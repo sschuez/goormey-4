@@ -1,0 +1,16 @@
+<h4>Edit recipe</h4>
+<br>
+<%# BUTTONS TOP %>
+<%= link_to @recipe do %>
+  <i class="fas fa-arrow-left btn-ghost"></i>
+<% end %>
+<%= link_to 'All recipes', recipes_path, class: "btn-ghost" %>
+
+<%= render 'form', recipe: @recipe %>
+<br>
+
+<%# BUTTONS BOTTOM %>
+<%= link_to @recipe do %>
+  <i class="fas fa-arrow-left btn-ghost"></i>
+<% end %>
+<%= link_to 'All recipes', recipes_path, class: "btn-ghost" %>

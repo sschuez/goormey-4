@@ -1,0 +1,17 @@
+<%# METADATA %>
+<% content_for :meta_title, "Ingredients for new recipe on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Interactively add all the necessary ingredient for this recipe. You can edit them later on." %>
+<%# /METADATA %>
+
+<%= render :layout => 'form' do |f| %>
+
+  <%= render "recipes/ingredients_form", f: f %>  
+
+  <div class="form-actions save-recipe">
+    <%#= link_to 'Previous step', previous_wizard_path, class: "btn btn-ghost btn-coral" %>
+    <%= f.submit "Instructions", class: "btn btn-ghost btn-green" %>
+    <%#= f.submit 'Complete', class: "btn btn-secondary" %>
+    <%#= link_to 'Skip', next_wizard_path %>
+  </div>
+
+<% end %>

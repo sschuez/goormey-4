@@ -1,0 +1,42 @@
+<div class="main-card">
+  <%# DELETE ICON TOP%>
+  <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete the recipe #{@recipe.name}?" }, method: :delete do %>
+    <i class="top-icon fas fa-trash-alt"></i>
+  <% end %>
+
+  <%= simple_form_for(@recipe) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div id="edit-recipe" class="edit-form">
+      <%= render "recipe_form", f: f %>
+      <br>
+      <div class="save-recipe">
+        <%= f.button :submit, "✓ Save recipe", class: "btn-ghost btn-green" %>
+      </div>  
+    </div>
+    
+    <div id="edit-ingredients" class="edit-form">
+      <%= render "ingredients_form", f: f %>
+      <br>
+      <div class="save-recipe">
+        <%= f.button :submit, "✓ Save recipe", class: "btn-ghost btn-green" %>
+      </div>
+    </div>
+
+    <div id="edit-instructions" class="edit-form">
+      <%= render "instructions_form", f: f %>
+      <br>
+      <div class="save-recipe">
+        <%= f.button :submit, "✓ Save recipe", class: "btn-ghost btn-green" %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <%# DELETE ICON BOTTOM%>
+  <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete the recipe #{@recipe.name}?" }, method: :delete do %>
+    <i class="bottom-icon fas fa-trash-alt"></i>
+  <% end %>
+</div>
+ 

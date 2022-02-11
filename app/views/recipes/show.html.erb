@@ -1,0 +1,128 @@
+<%# METADATA %>
+<% content_for :meta_title, "#{@recipe.name} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @recipe.description %>
+<% if @recipe.photo.attached? %>
+  <% content_for :meta_image, cl_image_path(@recipe.photo.key) %>
+<% else %>
+  <% content_for :meta_image, cl_image_path("sample_meal.jpg") %>
+<% end %>
+<%# /METADATA %>
+  
+  <%# ACTION BUTTON TOP %>
+  <div class="action-btns">
+    <%= link_to 'Back to recipes', recipes_path, class: "recipes-btn btn-ghost" %>
+    <% if policy(@recipe).update? %>
+      <%= link_to edit_recipe_path(@recipe) do %>
+        <i class="show-icon fas fa-edit"></i>
+      <% end %>
+    <% end %>
+
+    <% if policy(@recipe).destroy? %>
+      <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete recipe #{@recipe.name}?" }, method: :delete do %>
+        <i class="show-icon fas fa-trash-alt"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+<div class="main-card recipe">
+  
+  <%# PHOTO %>
+  <div class="photo-show">
+    <% if @recipe.photo.attached? %>
+      <%= cl_image_tag @recipe.photo.key, :transformation=>[
+        {:width=>800, :height=>800}], 
+        class: "card-image" %>
+    <% else %>
+      <%= image_tag "sample_meal.jpg", class: "card-image", :width=>200 %>
+    <% end %>
+  </div>
+
+  <%# DESCRIPTION %>
+  <div class="description-show">
+    <h4><%= @recipe.name %></h4>
+    <p><%= @recipe.description %></p>
+    
+    <%# USER AVATAR %>
+    <div class="user-show">
+      <%= link_to user_path(@recipe.user) do %>
+        <% if @recipe.user.avatar.attached? %> 
+          <%= cl_image_tag @recipe.user.avatar.key, :transformation=>[
+            {:width=>200, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"thumb"}], 
+            class: "card-recipe-user avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "default_avatar_square.png", class: "card-recipe-user avatar", alt: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      <% end %>
+
+      <%# USER NAME %>
+      <div class="user-name">
+        <%= link_to user_path(@recipe.user) do %>
+          <small><p><%= @recipe.user.full_name %></p></small>
+        <% end %>
+      </div>
+    </div>
+
+    <%# LIKE BUTTON %>
+    <div data-controller="like" class="card-recipe-like" data-like-url="/recipes/<%= @recipe.id %>/likes">
+      <i data-action="click->like#save" data-like-target="heart" class="<%= liked?(@recipe) %> fa-heart"></i>
+    </div>
+    
+    <%# EDIT BUTTON %>
+    <% if policy(@recipe).update? %>
+      <br>
+      <%= link_to 'Edit description', edit_recipe_path(@recipe, anchor: "edit-recipe"), class: "btn btn-ghost btn-coral" %>
+      <%# OLD LINK TO WIZARD %>
+      <%#= link_to 'Edit description', recipe_step_path(@recipe, :recipe), class: "btn btn-ghost btn-coral" %>
+    <% end %>
+  </div>
+</div>
+
+<%# INGREDIENTS %>
+<div class="main-card">
+  <h4>Ingredients</h4>
+  <p>Ingredients serve <strong><%= @recipe.serves %></strong> <%= @recipe.serves == 1 ? "person" : "persons" %></p>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <div class="ingredient-show">
+      <p><%= ingredient.description %></p>
+    </div>
+  <% end %>
+  <% if policy(@recipe).update? %>
+    <br>
+    <%= link_to 'Edit ingredients', edit_recipe_path(@recipe, anchor: "edit-ingredients"), class: "btn btn-ghost btn-coral" %>
+  <% end %>
+</div>
+
+<%# INSTRUCITONS %>
+<div data-controller="nested-form" class="main-card">
+  <h4>Instructions</h4>
+  <% @recipe.instructions.each do |instruction| %>
+    <div data-nested-form-target="inputElement" class="ingredient-show">
+      <div class="counter"><h4></h4></div>
+      <div class="instruction-description"><p>
+        <%= instruction.description %>
+      </p>
+      </div>
+    </div>
+  <% end %>
+  <% if policy(@recipe).update? %>
+    <br>
+    <%= link_to 'Edit instructions', edit_recipe_path(@recipe, anchor: "edit-instructions"), class: "btn btn-ghost btn-coral" %>
+  <% end %>
+</div>
+<br>
+<div class="action-btns">
+  <%= link_to 'Back to recipes', recipes_path, class: "recipes-btn btn-ghost" %>
+    
+  <% if policy(@recipe).update? %>
+    <%= link_to edit_recipe_path(@recipe) do %>
+      <i class="show-icon fas fa-edit"></i>
+    <% end %>
+  <% end %>
+
+  <% if policy(@recipe).destroy? %>
+    <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete recipe #{@recipe.name}?" }, method: :delete do %>
+      <i class="show-icon fas fa-trash-alt"></i>
+    <% end %>
+  <% end %>
+</div>
+
