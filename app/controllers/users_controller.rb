@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :show ]
+  skip_before_action :authenticate_user!, only: [ :show, :user_recipes, :query_and_respond ]
   before_action :set_user, only: %i[ show user_recipes edit update destroy ]
 
   def show
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'list.html', locals: { recipes: recipes } }
+      format.text { render partial: "list", locals: { recipes: recipes }, formats: :html }
     end
   end
 end
