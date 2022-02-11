@@ -1,0 +1,11 @@
+@use "../config/config.sass.scss" as *;
+
+.dark-mode-switch {
+  display: flex;
+  // justify-content: center;
+  // position: absolute;
+  top: -68px;
+  right: 12px;
+  margin: 8px 0 0 6px;
+  cursor: pointer;
+}
