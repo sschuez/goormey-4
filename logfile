@@ -17,3 +17,8 @@
 2022-02-11 17:55:31.670 CET [7260] STATEMENT:  CREATE DATABASE "goormey_4_development" ENCODING = 'unicode'
 2022-02-11 17:55:31.674 CET [7261] ERROR:  database "goormey_4_test" already exists
 2022-02-11 17:55:31.674 CET [7261] STATEMENT:  CREATE DATABASE "goormey_4_test" ENCODING = 'unicode'
+2022-02-11 22:27:47.799 CET [11263] ERROR:  relation "active_storage_blobs" already exists
+2022-02-11 22:27:47.799 CET [11263] STATEMENT:  CREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)
+2022-02-11 22:28:06.067 CET [11297] ERROR:  database "goormey_4_development" is being accessed by other users
+2022-02-11 22:28:06.067 CET [11297] DETAIL:  There is 1 other session using the database.
+2022-02-11 22:28:06.067 CET [11297] STATEMENT:  DROP DATABASE IF EXISTS "goormey_4_development"

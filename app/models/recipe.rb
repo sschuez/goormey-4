@@ -14,7 +14,7 @@ class Recipe < ApplicationRecord
 	accepts_nested_attributes_for :instructions, reject_if: :all_blank, allow_destroy: :true
 	belongs_to :user
 	has_one_attached :photo
-	has_many :likes
+	has_many :likes, dependent: :destroy
 
 	include PgSearch::Model
 	multisearchable against: [ :name, :description ]

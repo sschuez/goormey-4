@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # == Relationships ========================================================
   has_many :recipes
   has_one_attached :avatar
-  has_many :likes
+  has_many :likes, dependent: :destroy
   
   include PgSearch::Model
   multisearchable against: [ :first_name, :last_name ]

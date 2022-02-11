@@ -1,6 +1,9 @@
 <div class="main-card">
   <%# DELETE ICON TOP%>
-  <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete the recipe #{@recipe.name}?" }, method: :delete do %>
+  <%= link_to recipe_path(@recipe), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure you want to delete recipe #{@recipe.name}?"
+  } do %>
     <i class="top-icon fas fa-trash-alt"></i>
   <% end %>
 
@@ -35,7 +38,10 @@
   <% end %>
 
   <%# DELETE ICON BOTTOM%>
-  <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete the recipe #{@recipe.name}?" }, method: :delete do %>
+  <%= link_to recipe_path(@recipe), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure you want to delete recipe #{@recipe.name}?"
+  } do %>
     <i class="bottom-icon fas fa-trash-alt"></i>
   <% end %>
 </div>

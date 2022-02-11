@@ -18,7 +18,10 @@
     <% end %>
 
     <% if policy(@recipe).destroy? %>
-      <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete recipe #{@recipe.name}?" }, method: :delete do %>
+      <%= link_to recipe_path(@recipe), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure you want to delete recipe #{@recipe.name}?"
+      } do %>
         <i class="show-icon fas fa-trash-alt"></i>
       <% end %>
     <% end %>
@@ -120,7 +123,10 @@
   <% end %>
 
   <% if policy(@recipe).destroy? %>
-    <%= link_to recipe_path(@recipe), data: { confirm: "Are you sure you want to delete recipe #{@recipe.name}?" }, method: :delete do %>
+    <%= link_to recipe_path(@recipe), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure you want to delete recipe #{@recipe.name}?"
+    } do %>
       <i class="show-icon fas fa-trash-alt"></i>
     <% end %>
   <% end %>
