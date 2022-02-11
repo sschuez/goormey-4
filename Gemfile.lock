@@ -315,7 +315,7 @@ DEPENDENCIES
   jbuilder
   kaminari (~> 1.2)
   letter_opener
-  pg (~> 1.1)
+  pg
   pg_search (~> 2.3)
   possessive
   postmark-rails
