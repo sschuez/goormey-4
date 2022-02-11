@@ -1,0 +1,14 @@
+2022-02-11 17:36:19.265 CET [4512] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin21.3.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.30), 64-bit
+2022-02-11 17:36:19.266 CET [4512] LOG:  could not bind IPv6 address "::1": Address already in use
+2022-02-11 17:36:19.266 CET [4512] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2022-02-11 17:36:19.266 CET [4512] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2022-02-11 17:36:19.266 CET [4512] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2022-02-11 17:36:19.266 CET [4512] WARNING:  could not create listen socket for "localhost"
+2022-02-11 17:36:19.266 CET [4512] FATAL:  could not create any TCP/IP sockets
+2022-02-11 17:36:19.266 CET [4512] LOG:  database system is shut down
+2022-02-11 17:36:46.829 CET [4721] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin21.3.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.30), 64-bit
+2022-02-11 17:36:46.830 CET [4721] LOG:  listening on IPv6 address "::1", port 5432
+2022-02-11 17:36:46.830 CET [4721] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-02-11 17:36:46.830 CET [4721] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-02-11 17:36:46.832 CET [4722] LOG:  database system was shut down at 2022-02-11 17:35:53 CET
+2022-02-11 17:36:46.834 CET [4721] LOG:  database system is ready to accept connections
