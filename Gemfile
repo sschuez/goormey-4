@@ -48,6 +48,20 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "devise"
+gem "pundit"
+gem "cssbundling-rails"
+gem "simple_form"
+gem 'wicked'
+gem 'possessive'
+gem 'cloudinary'
+gem 'letter_opener', group: :development
+gem 'postmark-rails'
+gem 'autoprefixer-rails', '10.2.5'
+gem "acts_as_list", "~> 1.0"
+gem "kaminari", "~> 1.2"
+gem "pg_search", "~> 2.3"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -62,6 +76,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'spring'
+  gem 'faker'
+  gem 'ruby-progressbar'
 end
 
 group :test do
@@ -70,7 +87,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem "devise"
-gem "pundit"
-gem "cssbundling-rails"
-gem "simple_form"
