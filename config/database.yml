@@ -87,6 +87,6 @@ production:
 
 staging:
   <<: *default
-  database: goormey_4_production
+  database: goormey_4_staging
   username: goormey_4
   password: <%= ENV["GOORMEY_4_DATABASE_PASSWORD"] %>
